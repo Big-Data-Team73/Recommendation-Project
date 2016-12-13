@@ -12,9 +12,12 @@ Built the clasification model already but need formatted data for the model inpu
 Need to convert the pickle list format into the scipy.sparse.csr_matrix.
 Need to add the labels for each topic. For example, the data will contain two part. The first part is feature data which means all the key words which belongs to the same topic. The second part is label data which means the topic index. I put the example like below:
 
-feature                              label     
-dentist sour dental                    1
-beautiful pretty cute                  2
-For the example above, the feature data contains all the key words of the topics, the labels indicate that the topic #1, topic #2 
+feature:                                 
+dentist sour dental                    
+beautiful pretty cute   
 
+label:
+1
+2
 
+For the example above, the feature data contains all the key words of the topics as matrix, the labels indicate that the topic #1, topic #2 as arrays.
