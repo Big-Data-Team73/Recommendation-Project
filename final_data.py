@@ -22,12 +22,13 @@ def business_extractor():
         bcity = line_dict['city'].encode('utf-8')
         if bcity != CURRENT_CITY:
             continue
-        bname = line_dict['name'].encode('utf-8')
-        bid = line_dict['business_id'].encode('utf-8')
-        business_id_set.add(bid)
-        bnum[bid] = number
-        bn[number] = bname
-        number += 1
+        if str(line_dict['categories']).find('Restaurants') != -1:
+            bname = line_dict['name'].encode('utf-8')
+            bid = line_dict['business_id'].encode('utf-8')
+            business_id_set.add(bid)
+            bnum[bid] = number
+            bn[number] = bname
+            number += 1
     dataset.close()
 # "votes", "user_id", "review_id", "stars", "date", "text", "type", "business_id"
 def review_extractor():
